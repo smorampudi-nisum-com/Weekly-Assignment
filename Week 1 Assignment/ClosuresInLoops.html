@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Closure In Loops Application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mootools/1.6.0/mootools-core-compat.js"></script>
+  <style>
+  	p{
+  		color: red;
+  		font-weight: bold;
+  		font-size:14px;
+  	}
+  </style>
+<script>
+	window.addEvent('load', function() {
+		function showHelp(help) {
+  		document.getElementById('help').innerHTML = help;
+	}
+
+	function makeHelpCallback(help) {
+	  return function() {
+	    showHelp(help);
+	  };
+	}
+
+	function setupHelp() {
+	  var helpText = [
+	      {'id': 'email', 'help': 'Your e-mail address'},
+	      {'id': 'name', 'help': 'Your full name'},
+	      {'id': 'age', 'help': 'Your age (you must be over 16)'}
+	    ];
+
+	  for (var i = 0; i < helpText.length; i++) {
+	    var item = helpText[i];
+	    document.getElementById(item.id).onfocus =
+	       makeHelpCallback(item.help);
+	  }
+	}
+
+	setupHelp();
+	});
+		
+</script>
+</head>
+<body class="container">
+  <form class="form-horizontal">
+  	<p id="help">Helpful notes will appear here</p>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-6">
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-6">          
+        <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Age:</label>
+      <div class="col-sm-6">          
+        <input type="text" class="form-control" id="age" placeholder="Enter age" name="age">
+      </div>
+    </div>
+  </form>
+		
+</body>
+</html>
