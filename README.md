@@ -42,7 +42,11 @@ with closures Global scope can be made local(private).
 		name1.setID(prompt("please enter a name to update your previous name")); 
 		alert("your updated name is" +" " + name1.getID()); 
 		
-				They do not store the actual value. Closures get more interesting when the value of the outer function’s variable 						changes before the closure is called. 
+		They do not store the actual value. Closures get more interesting when the value of the outer function’s variable 			changes before the closure is called. 
 		
-	
-	
+# Weekly-Assignment Day @2 Prototypes in JS
+Every JavaScript object has a prototype. The prototype is also an object.All JavaScript objects inherit their 
+properties and methods from their prototype.
+
+  The above files contains a POC on prototypes concept in JS 
+  and a detailed document on prototypes, how many types of proytotyes how they are used.
