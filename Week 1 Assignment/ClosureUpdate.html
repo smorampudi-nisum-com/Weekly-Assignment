@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Closure Update Application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+function UpdateName () {
+    var myName = prompt("Please enter a name");
+    // We are returning an object with some inner function
+    // All the inner functions have access to the outer function's variabl
+    return {
+        getID: function ()  {
+            // This inner function will return the UPDATED celebrityID variable
+            // It will return the current value of celebrityID, even after the changeTheID function changes i
+          return UpdateName;
+        },
+        setID: function (newName)  {
+            // This inner function will change the outer function's variable anytime
+            UpdateName = newName;
+        }
+    }
+}
+var name1 = UpdateName (); // At this juncture, the celebrityID outer function has returned.
+name1.getID(); // 999
+name1.setID(prompt("please enter a name to update your previous name")); // Changes the outer function's variable
+alert("your updated name is" +" " + name1.getID()); // 567: It returns the updated celebrityId variable
+</script>
+</head>
+</html>
+
+
+
+
+
+
+
