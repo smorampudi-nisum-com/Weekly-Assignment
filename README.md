@@ -1,4 +1,3 @@
-
 # Weekly-Assignment Day 1:
 1. closure is simply defined as Function and a part of lexical scope.
 
